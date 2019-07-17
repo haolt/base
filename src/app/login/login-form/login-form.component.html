@@ -1,0 +1,45 @@
+<div class="login">
+  <div class="login__layer"></div>
+  <div class="login__form">
+    <h3 class="form__title my-4">Login</h3>
+    <form [formGroup]="loginUser"
+      (ngSubmit)="onLogin()"
+    >
+      <div class="col-auto p-0 my-4">
+        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Email</div>
+          </div>
+          <input type="email" class="form-control"
+            formControlName="email"
+          />
+        </div>
+      </div>
+      <div class="col-auto p-0 my-4">
+        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Password</div>
+          </div>
+          <input type="password" class="form-control"
+            formControlName="password"
+          />
+        </div>
+      </div>
+      <!-- <app-select-lang></app-select-lang> -->
+      <div class="col-auto custom-control custom-checkbox my-1">
+        <input type="checkbox" class="custom-control-input" id="customControlInline">
+        <label class="custom-control-label" for="customControlInline">Remember me</label>
+      </div>
+      <app-select-lang></app-select-lang>
+      {{ 'Loginform nhận được lang là: ' + curentLang }}
+      <!-- {{ 'HOME.TITLE' | translate }} -->
+      <div class="col-auto p-0 my-4">
+        <button type="submit" class="btn btn-primary mb-2 btn-block"
+          [disabled]="!loginUser.valid"
+        >Login</button>
+      </div>
+    </form>
+  </div>
+</div>
